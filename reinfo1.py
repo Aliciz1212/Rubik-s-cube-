@@ -9,6 +9,8 @@ import threading
 
 
 
+
+
 def eval_genomes(genomes,config):
     WIDTH,HEIGHT=800,580
     BALL_RADIUS=7
@@ -600,16 +602,16 @@ def test_genomes(config):
     
 
 def run_neat(config):
-    p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-388')
-    #p = neat.Population(config)
+    # p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-388')
+    p = neat.Population(config)
     p.add_reporter(neat.StdOutReporter(True))
     
     p.add_reporter(neat.StatisticsReporter())
     p.add_reporter(neat.Checkpointer(1))
 
     p.run(eval_genomes, 100)
-    # with open("best_ai.pickle", "wb") as f:
-    #     pickle.dump(winner,f)
+    with open("best_ai.pickle", "wb") as f:
+        pickle.dump(winner,f)
 
 
 
@@ -622,6 +624,6 @@ if __name__== "__main__":
     config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
                          config_path)
-    #run_neat(config)
-    test_genomes(config)
+    run_neat(config)
+    # test_genomes(config)
     
