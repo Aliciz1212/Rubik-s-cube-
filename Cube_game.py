@@ -64,7 +64,7 @@ colors_dic = {0: [[8, 4, 1], 'GREEN'],
 
 WIDTH, HEIGHT = 1000, 1000  # 700,500
 FPS = 60
-delay=250
+delay=300
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
@@ -179,18 +179,18 @@ def color_handling(MODE):
         
     
 
-    # if keys[pygame.K_LEFT] or MODE[9]: 
-    #     len_T1 = len(T1_colors)
-    #     len_T2 = len(T2_colors)
-    #     counterclockwise=True
-    #     pygame.time.delay(delay)
-    #     Transition_Mode(len_T1,len_T2,T1_colors,T2_colors,counterclockwise)
-    # if keys[pygame.K_RIGHT] or MODE[10]:
-    len_T1 = len(T1_colors)
-    len_T2 = len(T2_colors)
-    counterclockwise=False 
-    pygame.time.delay(delay)
-    Transition_Mode(len_T1,len_T2,T1_colors,T2_colors,counterclockwise)
+    if keys[pygame.K_LEFT] or MODE[9]: 
+        len_T1 = len(T1_colors)
+        len_T2 = len(T2_colors)
+        counterclockwise=True
+        pygame.time.delay(delay)
+        Transition_Mode(len_T1,len_T2,T1_colors,T2_colors,counterclockwise)
+    if keys[pygame.K_RIGHT] or MODE[10]:
+        len_T1 = len(T1_colors)
+        len_T2 = len(T2_colors)
+        counterclockwise=False 
+        pygame.time.delay(delay)
+        Transition_Mode(len_T1,len_T2,T1_colors,T2_colors,counterclockwise)
 
             
             
