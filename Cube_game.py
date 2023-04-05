@@ -371,6 +371,7 @@ def main():
                 delay=300
                 MODE=[0,0,0,0,0,0,0,0,0,0,0]
         Ccolors_dic,training_list=calculate_init()
+
         score=calculate_distance(Ccolors_dic)
         
         # pygame.display.update()
